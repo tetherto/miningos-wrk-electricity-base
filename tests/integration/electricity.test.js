@@ -112,7 +112,7 @@ test('integration - fetch and save hourly stats', async (t) => {
 
   // Verify data was saved to DB
   const ts = testTime.getTime()
-  const utilsStore = require('hp-svc-facs-store/utils')
+  const utilsStore = require('@tetherto/hp-svc-facs-store/utils')
   const key = utilsStore.convIntToBin(ts)
 
   const stream = worker.hourlyStatsDb.createReadStream({

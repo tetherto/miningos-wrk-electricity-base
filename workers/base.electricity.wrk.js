@@ -1,8 +1,8 @@
 'use strict'
 
-const WrkRack = require('miningos-tpl-wrk-electricity/workers/rack.electricity.wrk.js')
+const WrkRack = require('@tetherto/miningos-tpl-wrk-electricity/workers/rack.electricity.wrk.js')
 const gLibUtilBase = require('@bitfinex/lib-js-util-base')
-const utilsStore = require('hp-svc-facs-store/utils')
+const utilsStore = require('@tetherto/hp-svc-facs-store/utils')
 const async = require('async')
 const {
   DATE_RANGE,
@@ -22,7 +22,7 @@ class WrkElectricityBase extends WrkRack {
     this.setInitFacs([
       [
         'fac',
-        'bfx-facs-http',
+        '@bitfinex/bfx-facs-http',
         '0',
         '0',
         {

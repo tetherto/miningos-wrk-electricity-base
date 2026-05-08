@@ -1,5 +1,5 @@
 {
-  "name": "miningos-wrk-electricity-base",
+  "name": "@tetherto/miningos-wrk-electricity-base",
   "version": "0.0.1",
   "description": "Base electricity worker",
   "keywords": [
@@ -33,18 +33,21 @@
     "test": "npm run lint && npm run test:unit && npm run test:integration",
     "test:unit": "brittle tests/unit/*.js",
     "test:integration": "NODE_ENV=test brittle tests/integration/*.js",
-    "test:coverage": "brittle --coverage tests/{**/}*.test.js"
+    "test:coverage": "brittle --coverage tests/{**/}*.test.js",
+    "dev": "node worker.js --wtype wrk-electricity-base --env development --rack rack-1",
+    "mock": "node mock/server.js"
   },
   "dependencies": {
+    "@bitfinex/bfx-svc-boot-js": "1.2.0",
     "@bitfinex/lib-js-util-base": "git+https://github.com/bitfinexcom/lib-js-util-base.git",
-    "bfx-facs-http": "git+https://github.com/bitfinexcom/bfx-facs-http.git",
-    "hp-svc-facs-store": "git+https://github.com/tetherto/hp-svc-facs-store.git",
-    "miningos-tpl-wrk-electricity": "git+https://github.com/tetherto/miningos-tpl-wrk-electricity.git"
+    "@bitfinex/bfx-facs-http": "git+https://github.com/bitfinexcom/bfx-facs-http.git",
+    "@tetherto/hp-svc-facs-store": "git+https://github.com/tetherto/hp-svc-facs-store.git#v1.0.0",
+    "@tetherto/miningos-tpl-wrk-electricity": "git+https://github.com/tetherto/miningos-tpl-wrk-electricity.git"
   },
   "devDependencies": {
     "brittle": "3.16.3",
-    "fastify": "4.29.1",
-    "miningos-mock-control-service": "git+https://github.com/tetherto/miningos-mock-control-service.git",
+    "fastify": "5.8.5",
+    "@tetherto/miningos-mock-control-service": "git+https://github.com/tetherto/miningos-mock-control-service.git",
     "standard": "17.1.2"
   }
 }
