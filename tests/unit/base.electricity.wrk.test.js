@@ -1,6 +1,7 @@
 'use strict'
 
 const test = require('brittle')
+const WrkRack = require('@tetherto/miningos-tpl-wrk-electricity/workers/rack.electricity.wrk.js')
 const WrkElectricityBase = require('../../workers/base.electricity.wrk')
 const { DATE_RANGE } = require('../../workers/lib/constants')
 
@@ -10,6 +11,23 @@ function createMockWorker () {
   worker.logger = { error: () => {}, info: () => {}, debug: () => {} }
   return worker
 }
+
+test('WrkElectricityBase - init', async (t) => {
+  const worker = createMockWorker()
+  worker.conf = { electricity: { api: { baseUrl: 'http://127.0.0.1:8000' } } }
+  worker.loadConf = () => {}
+  const initFacsCalls = []
+  worker.setInitFacs = (facs) => initFacsCalls.push(facs)
+
+  const origInit = WrkRack.prototype.init
+  WrkRack.prototype.init = function () {}
+  t.teardown(() => { WrkRack.prototype.init = origInit })
+
+  worker.init()
+
+  t.is(initFacsCalls.length, 1)
+  t.is(initFacsCalls[0][0][4].baseUrl, 'http://127.0.0.1:8000')
+})
 
 test('WrkElectricityBase - _saveToDb', async (t) => {
   const worker = createMockWorker()
