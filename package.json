@@ -1,6 +1,6 @@
 {
   "name": "@tetherto/miningos-wrk-electricity-base",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "description": "Base electricity worker",
   "keywords": [
     "tether"
@@ -16,7 +16,7 @@
     "url": "https://github.com/tetherto/miningos-wrk-electricity-base/issues"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "files": [
     "worker.js",
