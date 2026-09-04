@@ -38,15 +38,15 @@
     "mock": "node mock/server.js"
   },
   "dependencies": {
-    "@bitfinex/bfx-svc-boot-js": "1.2.0",
-    "@bitfinex/lib-js-util-base": "git+https://github.com/bitfinexcom/lib-js-util-base.git",
-    "@bitfinex/bfx-facs-http": "git+https://github.com/bitfinexcom/bfx-facs-http.git",
-    "@tetherto/hp-svc-facs-store": "git+https://github.com/tetherto/hp-svc-facs-store.git#v1.0.0",
+    "@bitfinex/bfx-svc-boot-js": "1.3.1",
+    "@bitfinex/lib-js-util-base": "^2.1.0",
+    "@bitfinex/bfx-facs-http": "^1.1.3",
+    "@tetherto/hp-svc-facs-store": "^1.0.1",
     "@tetherto/miningos-tpl-wrk-electricity": "git+https://github.com/tetherto/miningos-tpl-wrk-electricity.git"
   },
   "devDependencies": {
     "brittle": "3.16.3",
-    "fastify": "5.8.5",
+    "fastify": "5.12.1",
     "@tetherto/miningos-mock-control-service": "git+https://github.com/tetherto/miningos-mock-control-service.git",
     "standard": "17.1.2"
   }
