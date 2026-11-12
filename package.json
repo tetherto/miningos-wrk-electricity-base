@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "brittle": "3.16.3",
-    "fastify": "5.12.1",
+    "fastify": "5.12.8",
     "@tetherto/miningos-mock-control-service": "git+https://github.com/tetherto/miningos-mock-control-service.git",
     "standard": "17.1.2"
   }
